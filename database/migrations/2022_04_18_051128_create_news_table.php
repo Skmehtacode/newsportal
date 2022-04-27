@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("post_title");
             $table->string("author");
             $table->string("category");
-            $table->string("description");
+            $table->text("description");
             $table->string("image")->nullable();
             $table->string("status")->default(0);
             $table->date("date");
