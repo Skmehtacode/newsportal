@@ -22,11 +22,11 @@
                     </form>
                     <div class="list-group mt-3">
                         <li class="list-group-item active">Category</li>
-                        <a href="" class="list-group-item list-group-item-action">POLITICS</a>
-                        <a href="" class="list-group-item list-group-item-action">SOCIAL MEDIA</a>
-                        <a href="" class="list-group-item list-group-item-action">BIHAR</a>
-                        <a href="" class="list-group-item list-group-item-action">CRIME</a>
-                        <a href="" class="list-group-item list-group-item-action">SPORTS</a>
+
+                        @foreach ($categories as $item)
+                            <a href="" class="list-group-item list-group-item-action">{{$item->category_title}}</a>
+                        @endforeach
+
                     </div>
                     <h2 class="display-8 mt-3">{{$news->post_title}}</h2>   
                 </div>  

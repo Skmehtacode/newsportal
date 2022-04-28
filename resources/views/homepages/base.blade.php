@@ -22,11 +22,14 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
        <div class="container">
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="" class="nav-link text-light fw-bold">POLITICS</a></li>
-                <li class="nav-item"><a href="" class="nav-link text-light fw-bold">SOCIAL MEDIA</a></li>
+                @foreach ($categories as $item)
+                
+                <li class="nav-item"><a href="" class="nav-link text-light fw-bold">{{$item->category_title}}</a></li>
+                @endforeach
+                {{-- <li class="nav-item"><a href="" class="nav-link text-light fw-bold">SOCIAL MEDIA</a></li>
                 <li class="nav-item"><a href="" class="nav-link text-light fw-bold">BIHAR</a></li>
                 <li class="nav-item"><a href="" class="nav-link text-light fw-bold">CRIME</a></li>
-                <li class="nav-item"><a href="" class="nav-link text-light fw-bold">SPORTS</a></li>
+                <li class="nav-item"><a href="" class="nav-link text-light fw-bold">SPORTS</a></li> --}}
             </ul>
        </div>
     </nav>

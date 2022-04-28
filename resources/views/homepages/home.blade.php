@@ -22,7 +22,7 @@
                                             <div class="row">
                                                 <h4>{{ $new->author }}</h4>
                                             </div>
-                                            <p class="small">{{ substr($new->description,0,100) }}.....</p>
+                                            <p class="small">{{ substr($new->description,0,3000) }}.....</p>
                                             <a href="{{ route('readmore', ['id' => $new->id]) }}"
                                                 class="btn btn-info">Readmore</a>
                                             <a href="{{ route('delete',['id' => $new->id])}}" class="btn btn-danger float-end small">delete</a>
@@ -42,16 +42,15 @@
                     </form>
 
                     <div class="card">
-                        <img src="" alt="">
+                        <img src="../public/image/1651114061_img1.jpg" width="50" alt="">
                     </div>
                     
                     <div class="list-group mt-3">
                         <li class="list-group-item active">Category</li>
-                        <a href="" class="list-group-item list-group-item-action">POLITICS</a>
-                        <a href="" class="list-group-item list-group-item-action">SOCIAL MEDIA</a>
-                        <a href="" class="list-group-item list-group-item-action">BIHAR</a>
-                        <a href="" class="list-group-item list-group-item-action">CRIME</a>
-                        <a href="" class="list-group-item list-group-item-action">SPORTS</a>
+                        @foreach ($categories as $item)
+                            <a href="" class="list-group-item list-group-item-action">{{$item->category_title}}</a>
+                        @endforeach
+  
                     </div>
                 </div>
             </div>
