@@ -22,7 +22,7 @@
                                             <div class="row">
                                                 <h4>{{ $new->author }}</h4>
                                             </div>
-                                            <p class="small">{{ substr($new->description,0,3000) }}.....</p>
+                                            <p class="small">{{ substr($new->description,0,500) }}.....</p>
                                             <a href="{{ route('readmore', ['id' => $new->id]) }}"
                                                 class="btn btn-info">Readmore</a>
                                             <a href="{{ route('delete',['id' => $new->id])}}" class="btn btn-danger float-end small">delete</a>

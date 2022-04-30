@@ -8,11 +8,6 @@ use App\Models\Category;
 
 class NewsController extends Controller
 {
-    //
-    // public function filter($cat){
-    //     $data['categories'] = Category::all();
-    //     return view("homepages/store",$data);
-    // } 
 
     public function index(){
         $data['news'] = News::all(); 
