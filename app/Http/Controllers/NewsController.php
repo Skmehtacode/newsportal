@@ -15,6 +15,15 @@ class NewsController extends Controller
         return view("homepages/home",$data,$cat);
     }
 
+    
+    public function filter($cat_id){
+        $data['news'] = News::where("category_id",$cat_id)->get(); 
+        $cat['categories'] = Category::all(); 
+        return view("homepages/home",$data,$cat);
+    }
+
+
+
     public function view(){
         $data['categories'] = Category::all();
         return view("homepages/store",$data);
@@ -55,6 +64,7 @@ class NewsController extends Controller
 
     public function readmore($id){
         $data['news'] = News::find($id);
+        $data['related_news'] =  News::all()->except([$id]);
         $cat['categories'] = Category::all();
         return view("homepages.readmore",$data,$cat);
     }

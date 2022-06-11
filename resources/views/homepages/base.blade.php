@@ -9,22 +9,22 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info ">
         <div class="container">
-            <a href="" class="navbar-brand">News-Portal</a>
+            <a href="{{route("home")}}" class="navbar-brand fw-bolder">News-Portal</a>
             
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="{{route("home")}}" class="nav-link">Home</a></li>
+                {{-- <li class="nav-item"><a href="">Home</a></li> --}}
                 <li class="nav-item"><a href="{{route("store")}}" class="btn btn-warning">Insert</a></li>
             </ul>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top">
        <div class="container">
             <ul class="navbar-nav">
                 @foreach ($categories as $item)
                 
-                <li class="nav-item"><a href="" class="nav-link text-light fw-bold">{{$item->category_title}}</a></li>
+                <li class="nav-item"><a href="{{route('filter',['cat_id'=>$item->id])}}" class="nav-link text-light fw-bold">{{$item->category_title}}</a></li>
                 @endforeach
                 {{-- <li class="nav-item"><a href="" class="nav-link text-light fw-bold">SOCIAL MEDIA</a></li>
                 <li class="nav-item"><a href="" class="nav-link text-light fw-bold">BIHAR</a></li>

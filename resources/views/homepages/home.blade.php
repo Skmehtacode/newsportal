@@ -12,7 +12,7 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="card">
-                                            <img src="{{ asset('image/' . $new->image) }}" alt="{{ $new->image }}"
+                                            <img src="{{ asset('image/' . $new->image) }}" alt=""
                                                 style="height: 250px;object-fit:cover">
                                         </div>
                                     </div>
@@ -22,7 +22,7 @@
                                             <div class="row">
                                                 <h4>{{ $new->author }}</h4>
                                             </div>
-                                            <p class="small">{{ substr($new->description,0,500) }}.....</p>
+                                            <p class="small">{{ substr($new->description,0,200) }}.....</p>
                                             <a href="{{ route('readmore', ['id' => $new->id]) }}"
                                                 class="btn btn-info">Readmore</a>
                                             <a href="{{ route('delete',['id' => $new->id])}}" class="btn btn-danger float-end small">delete</a>
@@ -42,7 +42,7 @@
                     </form>
 
                     <div class="card">
-                        <img src="../public/image/1651114061_img1.jpg" width="50" alt="">
+                        <img src="{{url("public/homepages/cwsimg")}}" width="50" alt="">
                     </div>
                     
                     <div class="list-group mt-3">
@@ -55,5 +55,12 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container-fluid bg-dark">
+       <div class="container">
+        <div class="row ">
+            <p class="text-light mt-4">Copyright © PurniaNews7 | 2022</p>
+        </div>
+       </div>
     </div>
 @endsection

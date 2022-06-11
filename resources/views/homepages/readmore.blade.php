@@ -11,7 +11,34 @@
                     <img src="{{ asset('image/'.$news->image) }}" alt="{{ $news->image }}" class="card-img-top " style="width : 750px; height : 400px">
                 </div>
                 <div class="row mt-4">
-                    <p class="small fs-6 lh-lg">{{$news->description}}</p>
+                    <p class="lh-lg lead" style="text-align: justify">{{$news->description}}</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <h4>Related News</h4>
+                        <hr>
+                    </div>
+                    @foreach ($related_news as $new)
+                    <div class="col-3">
+                            <div class="card mb-3">
+                                <img src="{{ asset('image/' . $new->image) }}" alt="{{ $new->image }}"
+                                                style="height: 150px;object-fit:cover">
+
+                                        <div class="card-body">
+                                            <h3 class="fw-bold h6 small text-truncate">{{ $new->post_title }}</h3>
+                                            <div class="row">
+                                                <small>{{ $new->author }}</small>
+                                            </div>
+                                            <a href="{{ route('readmore', ['id' => $new->id]) }}"
+                                                class="stretched-link"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                        @endforeach
+                   
+
+               
                 </div>
             </div>
             <div class="col-3 mt-3">
@@ -24,7 +51,7 @@
                         <li class="list-group-item active">Category</li>
 
                         @foreach ($categories as $item)
-                            <a href="" class="list-group-item list-group-item-action">{{$item->category_title}}</a>
+                            <a href="{{route('filter',['cat_id'=>$item->id])}}" class="list-group-item list-group-item-action">{{$item->category_title}}</a>
                         @endforeach
 
                     </div>
